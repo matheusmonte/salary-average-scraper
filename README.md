@@ -1,5 +1,5 @@
 # salary-average-scraper
-Simple scraper to get salary average using node and labda
+Simple scraper to get salary average using node and lambda
 
 ## Local Use
 
