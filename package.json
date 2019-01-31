@@ -1,0 +1,24 @@
+{
+  "name": "salaryaverage",
+  "version": "1.0.0",
+  "description": "a simple salary average scraper",
+  "main": "handler.js",
+  "dependencies": {
+    "axios": "^0.18.0",
+    "cheerio": "^1.0.0-rc.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/matheusmonte/salary-average-scraper.git"
+  },
+  "author": "Matheus Monte",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/matheusmonte/salary-average-scraper/issues"
+  },
+  "homepage": "https://github.com/matheusmonte/salary-average-scraper#readme"
+}
