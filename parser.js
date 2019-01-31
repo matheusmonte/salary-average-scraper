@@ -6,9 +6,10 @@ function extractSalaryFromHTML(html){
   //console.log('Estou', jobsRow);
   const salaryPerJob = [];
   jobsRow.each((i, el) => {
-    console.log($(el).children('td').text());
+    let job = $(el).children('td').text();
+    salaryPerJob.push(job);
   }); 
-  return jobsRow;  
+  return salaryPerJob;  
 };
 
 module.exports = {
