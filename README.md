@@ -7,7 +7,7 @@ Install serverless framework globally in your machine
 
 ```npm install serverless -g```
 
-after this, enter in your project file and give npm install
+after this, enter in your project folder and run npm install
 
 ```npm install```
 
