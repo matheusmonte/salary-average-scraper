@@ -5,7 +5,8 @@
   "main": "handler.js",
   "dependencies": {
     "axios": "^0.18.0",
-    "cheerio": "^1.0.0-rc.2"
+    "cheerio": "^1.0.0-rc.2",
+    "fs": "0.0.1-security"
   },
   "devDependencies": {},
   "scripts": {
