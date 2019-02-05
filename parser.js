@@ -1,22 +1,40 @@
 const cheerio = require('cheerio');
 
-function extractSalaryFromHTML(html){
+function extractSalaryFromHTML(html) {
   const $ = cheerio.load(html);
   const jobsRow = $('.listas tbody tr');
   const salaryPerJob = [];
   jobsRow.each((i, el) => {
-    let job = $(el).children('td').slice(1).eq(0).text();
-    let salaryAverage = $(el).children('td').slice(4).eq(0).text();
-    let salaryMin = $(el).children('td').slice(3).eq(0).text();
-    let salaryMax = $(el).children('td').slice(5).eq(0).text();
-    salaryPerJob.push({job, salaryAverage, salaryMin, salaryMax});
-  }); 
-  return salaryPerJob; 
-};
+    const job = $(el)
+      .children('td')
+      .slice(1)
+      .eq(0)
+      .text();
+    const salaryAverage = $(el)
+      .children('td')
+      .slice(4)
+      .eq(0)
+      .text();
+    const salaryMin = $(el)
+      .children('td')
+      .slice(3)
+      .eq(0)
+      .text();
+    const salaryMax = $(el)
+      .children('td')
+      .slice(5)
+      .eq(0)
+      .text();
+    salaryPerJob.push({
+      job, salaryAverage, salaryMin, salaryMax,
+    });
+  });
+  return salaryPerJob;
+}
 
-function extractJobsFromDataParsed(data){
-  let jobs = [];
-  data.salaryAndJobs.forEach((item, index) =>{
+function extractJobsFromDataParsed(data) {
+  const jobs = [];
+  data.salaryAndJobs.forEach((item) => {
     jobs.push(item.job);
   });
   return jobs;
@@ -24,5 +42,5 @@ function extractJobsFromDataParsed(data){
 
 module.exports = {
   extractSalaryFromHTML,
-  extractJobsFromDataParsed
-}
+  extractJobsFromDataParsed,
+};
