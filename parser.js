@@ -6,9 +6,10 @@ function extractSalaryFromHTML(html){
   const salaryPerJob = [];
   jobsRow.each((i, el) => {
     let job = $(el).children('td').slice(1).eq(0).text();
-    let salary = $(el).children('td').slice(4).eq(0).text();
-    
-    salaryPerJob.push({job, salary});
+    let salaryAverage = $(el).children('td').slice(4).eq(0).text();
+    let salaryMin = $(el).children('td').slice(3).eq(0).text();
+    let salaryMax = $(el).children('td').slice(5).eq(0).text();
+    salaryPerJob.push({job, salaryAverage, salaryMin, salaryMax});
   }); 
   return salaryPerJob; 
 };
