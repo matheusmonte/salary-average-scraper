@@ -1,9 +1,10 @@
-service: salaryaverage # NOTE: update this with your service name
+service: cvm-alpha # NOTE: update this with your service name
 
 
 provider:
   name: aws
   runtime: nodejs8.10
+  region: us-east-2
 functions:
   getsalaryaverage:
     handler: handler.getsalaryaverage
