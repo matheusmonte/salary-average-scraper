@@ -13,6 +13,15 @@ function extractSalaryFromHTML(html){
   return salaryPerJob; 
 };
 
+function extractJobsFromDataParsed(data){
+  let jobs = [];
+  data.salaryAndJobs.forEach((item, index) =>{
+    jobs.push(item.job);
+  });
+  return jobs;
+}
+
 module.exports = {
-  extractSalaryFromHTML
+  extractSalaryFromHTML,
+  extractJobsFromDataParsed
 }
