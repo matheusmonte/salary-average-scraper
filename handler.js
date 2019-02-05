@@ -25,6 +25,6 @@ module.exports.getsalarybyjob = (event, context, callback) =>{
   let content = fs.readFileSync("./salaryaverage.json","UTF-8");
   let parsedContent = JSON.parse(content); 
   let searchResult = parsedContent.salaryAndJobs.find(x => x.job.toUpperCase() === event.job.toUpperCase());
-  searchResult != "" ? searchResult : {salary: 0 };
+  searchResult = searchResult !== undefined ? searchResult : {err : "job's salary not found"};
   callback(null, searchResult);
 };
